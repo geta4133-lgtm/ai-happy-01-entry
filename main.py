@@ -9,6 +9,7 @@ def main():
     output_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(output_dir, exist_ok=True)
     out_path = os.path.join(output_dir, "entry.png")
+    # Write decoded entry.png directly to output directory
     with open(out_path, "wb") as f:
         f.write(base64.b64decode(IMAGE_B64))
     print(f"Successfully wrote entry.png to {out_path}")
